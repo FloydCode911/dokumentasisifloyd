@@ -1,35 +1,139 @@
+/* Menambahkan Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --heading-color: #1e3799;
+    --code-bg: #f4f4f4;
+    --code-border: #ddd;
+    --pre-code-bg: #2c3e50;
+    --pre-code-color: #ecf0f1;
+    --link-color: #2980b9;
+    --link-hover-color: #1abc9c;
+    --button-bg: #3498db;
+    --button-hover-bg: #2980b9;
+}
+
+.theme-dark {
+    --bg-color: #1e1e1e;
+    --text-color: #d4d4d4;
+    --heading-color: #569cd6;
+    --code-bg: #2d2d2d;
+    --code-border: #3e3e3e;
+    --pre-code-bg: #1e1e1e;
+    --pre-code-color: #d4d4d4;
+    --link-color: #4ec9b0;
+    --link-hover-color: #9cdcfe;
+    --button-bg: #0e639c;
+    --button-hover-bg: #1177bb;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
 }
+
+/* Judul */
 h1, h2, h3 {
-    color: #2c3e50;
+    color: var(--heading-color);
+    font-weight: 700;
+    margin-bottom: 20px;
 }
+
+/* Kode */
 code {
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    font-family: Consolas, monospace;
-    padding: 2px 4px;
+    background-color: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: 5px;
+    font-family: 'Consolas', monospace;
+    padding: 5px 8px;
+    font-size: 14px;
 }
+
 pre code {
     padding: 15px;
-    border-radius: 5px;
-    background-color: #2d2d2d; /* Sesuaikan dengan tema yang dipilih */
-    font-family: Consolas, monospace;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: var(--pre-code-bg);
+    font-family: 'Consolas', monospace;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
     overflow-x: auto;
-    color: #f8f8f2; /* Warna teks utama */
- }
+    color: var(--pre-code-color);
+}
+
+/* Menambahkan bayangan dan efek hover untuk elemen kode */
+pre code:hover {
+    background-color: var(--code-bg);
+    transition: background-color 0.3s ease;
+}
+
 .function {
     margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--code-border);
     padding-bottom: 20px;
+    padding-top: 10px;
+    transition: transform 0.3s ease;
 }
+
+/* Animasi saat hover pada fungsi */
+.function:hover {
+    transform: translateY(-5px);
+}
+
 .parameter {
     margin-left: 20px;
+}
+
+/* Link */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Efek hover pada link */
+a:hover {
+    color: var(--link-hover-color);
+    border-bottom: 2px solid var(--link-hover-color);
+}
+
+/* Tambahkan efek hover pada tombol atau link penting */
+button, .important-link {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .important-link:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Tombol toggle tema */
+#theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    padding: 5px 10px;
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--button-hover-bg);
 }
