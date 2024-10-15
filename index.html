@@ -223,7 +223,11 @@ for word in words:
 </ul>
 
 <h2>Menampilkan Hasil</h2>
-<pre><code>await interaction.response.send_message(f'```Original: {original_text}\nResult: {final_text}```')</code></pre>
+<pre><code>
+    await interaction.response.send_message(f'```Original: {original_text}\nResult: {final_text}```')
+    🤓
+    🤓
+</code></pre>
 
 <ul>
     <li><code>await interaction.response.send_message(...)</code>: Mengirimkan pesan hasil transformasi teks ke Discord. Pesan ini ditampilkan dalam format kode blok menggunakan tiga backtick <code>```</code>, dengan teks asli dan hasil modifikasi dipisahkan oleh baris baru <code>\n</code>.</li>
