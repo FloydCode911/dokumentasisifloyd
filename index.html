@@ -9,6 +9,9 @@
     <title>Dokumentasi Bot Discord</title>
 
 </head>
+<button id="theme-toggle" style="position: fixed; top: 10px; right: 10px; z-index: 1000; padding: 5px 10px; background-color: #f0f0f0; border: none; border-radius: 5px; cursor: pointer;">
+    🌓 Toggle Theme
+</button>
 <body>
 
 <h1>Dokumentasi Bot Discord</h1>
@@ -654,6 +657,42 @@ async def clean(ctx):
 <!-- JavaScript for Highlight.js -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
+<script>
+    // Fungsi untuk mengatur tema
+    function setTheme(themeName) {
+        localStorage.setItem('theme', themeName);
+        document.documentElement.className = themeName;
+    }
 
+    // Fungsi untuk toggle tema
+    function toggleTheme() {
+        if (localStorage.getItem('theme') === 'theme-dark') {
+            setTheme('theme-light');
+        } else {
+            setTheme('theme-dark');
+        }
+    }
+
+    // Set tema saat halaman dimuat
+    (function () {
+        if (localStorage.getItem('theme') === 'theme-dark') {
+            setTheme('theme-dark');
+            document.getElementById('theme-toggle').textContent = '🌞 Light Mode';
+        } else {
+            setTheme('theme-light');
+            document.getElementById('theme-toggle').textContent = '🌙 Dark Mode';
+        }
+    })();
+
+    // Event listener untuk tombol toggle
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+        toggleTheme();
+        if (localStorage.getItem('theme') === 'theme-dark') {
+            this.textContent = '🌞 Light Mode';
+        } else {
+            this.textContent = '🌙 Dark Mode';
+        }
+    });
+</script>
 </body>
 </html>
