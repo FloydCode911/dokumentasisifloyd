@@ -127,7 +127,7 @@ button:hover, .important-link:hover {
     z-index: 1000;
     padding: 5px 10px;
     background-color: var(--button-bg);
-    color: white;
+    color: rgb(0, 0, 0);
     border: none;
     border-radius: 5px;
     cursor: pointer;
