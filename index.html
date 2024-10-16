@@ -665,13 +665,11 @@ async def clean(ctx):
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
 <script>hljs.highlightAll();</script>
 <script>
-    // Fungsi untuk mengatur tema
     function setTheme(themeName) {
         localStorage.setItem('theme', themeName);
         document.documentElement.className = themeName;
     }
 
-    // Fungsi untuk toggle tema
     function toggleTheme() {
         if (localStorage.getItem('theme') === 'theme-dark') {
             setTheme('theme-light');
@@ -680,24 +678,22 @@ async def clean(ctx):
         }
     }
 
-    // Set tema saat halaman dimuat
     (function () {
         if (localStorage.getItem('theme') === 'theme-dark') {
             setTheme('theme-dark');
-            document.getElementById('theme-toggle').textContent = ' 🌞 ';
+            document.getElementById('theme-toggle').textContent = '🌞 Light Mode';
         } else {
             setTheme('theme-light');
-            document.getElementById('theme-toggle').textContent = ' 🌙 ';
+            document.getElementById('theme-toggle').textContent = '🌙 Dark Mode';
         }
     })();
 
-    // Event listener untuk tombol toggle
     document.getElementById('theme-toggle').addEventListener('click', function() {
         toggleTheme();
         if (localStorage.getItem('theme') === 'theme-dark') {
-            this.textContent = ' 🌞 ';
+            this.textContent = '🌞 Light Mode';
         } else {
-            this.textContent = ' 🌙 ';
+            this.textContent = '🌙 Dark Mode';
         }
     });
 </script>
