@@ -63,9 +63,9 @@ BOT_TOKEN = ""</code></pre>
 <h2>Event Saat Bot Siap</h2>
 <pre><code>@bot.event
 async def on_ready():
-    await bot.tree.sync()  # Sinkronisasi command slash
+    await bot.tree.sync()
     print(f'Logged in as {bot.user}')
-    rotate_status.start()  # Memulai tugas rotasi status</code></pre>
+    rotate_status.start() </code></pre>
 
 <p>Bagian ini mendefinisikan event <code>on_ready</code>, yang dipanggil ketika bot berhasil login dan siap digunakan:</p>
 <ul>
@@ -684,10 +684,10 @@ async def clean(ctx):
     (function () {
         if (localStorage.getItem('theme') === 'theme-dark') {
             setTheme('theme-dark');
-            document.getElementById('theme-toggle').textContent = '🌞 Light Mode';
+            document.getElementById('theme-toggle').textContent = ' 🌞 ';
         } else {
             setTheme('theme-light');
-            document.getElementById('theme-toggle').textContent = '🌙 Dark Mode';
+            document.getElementById('theme-toggle').textContent = ' 🌙 ';
         }
     })();
 
